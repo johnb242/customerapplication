@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="#" th:action="@{/search}" method="post">
+    Search:<input type="text" name="lastname" />
+    <input type="submit" value="Submit" />
+</form>
+<table>
+    <tr>
+        <th>title</th>
+        <th>firstname</th>
+        <th>lastname</th>
+        <th>streetaddress</th>
+        <th>emailaddress</th>
+        <th>position</th>
+        <th>customerid</th>
+        <th>companyid</th>
+        <th>cityid</th>
+        <th>stateid</th>
+        <th>zipcodeid</th>
+    </tr>
+    <tr th:each="customer : ${customers}">
+        <td th:text="${customer.title}"></td>
+        <td th:text="${customer.firstname}"></td>
+        <td th:text="${customer.lastname}"></td>
+        <td th:text="${customer.streetaddress}"></td>
+        <td th:text="${customer.emailaddress}"></td>
+        <td th:text="${customer.position}"></td>
+        <td th:text="${customer.id}"></td>
+        <td th:text="${customer.companyid}"></td>
+        <td th:text="${customer.cityid}"></td>
+        <td th:text="${customer.stateid}"></td>
+        <td th:text="${customer.zipcodeid}"></td>
+
+    </tr>
+</table>
+</body>
+</html>
